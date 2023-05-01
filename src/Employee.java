@@ -41,60 +41,12 @@ public class Employee {
         this.salary = salary;
     }
     public String toString() {
-             return "Employee{" +
+        return "Employee{" +
                 "id=" + id +
                 ", ФИО ='" + name + '\'' +
                 ", отдел =" + department +
                 ", зарплата =" + salary +
                 '}';
-            }
-    public static double calculateTotalSalary(Employee[] employees) {
-        double totalSalary = 0.0;
-        for (Employee employee : employees) {
-            if (employee != null) {
-                totalSalary = totalSalary + employee.getSalary();
-            }
-        }
-        return totalSalary;
     }
-    public static double getAverageSalary(Employee[] employees) {
-        int summ = 0;
-        for (Employee employee : employees) {
-            if (employee != null) {
-                summ = summ + employee.getSalary();
-            }
-        }
-        return (double) summ/Employee.count;
-    }
-    public static Employee getEmployeeWithMinSalary(Employee[] employees) {
-        Employee employeeWithMinSalary = employees[0];
-        for (int i = 0; i < Employee.count; i++) {
-            if (employees[i].getSalary() < employeeWithMinSalary.getSalary()) {
-                employeeWithMinSalary = employees[i];
-            }
-        }
-        return employeeWithMinSalary;
-    }
-
-    public static Employee getEmployeeWithMaxSalary(Employee[] employees) {
-        Employee employeeWithMaxSalary = employees[0];
-        for (int i = 0; i < Employee.count; i++) {
-            if (employees[i].getSalary() > employeeWithMaxSalary.getSalary()) {
-                employeeWithMaxSalary = employees[i];
-            }
-        }
-        return employeeWithMaxSalary;
-    }
-
-
-    public static String[] getEmployeeNames(Employee[] employees) {
-        String[] employeeNames = new String[employees.length];
-        for (int i = 0; i < Employee.count; i++) {
-            employeeNames[i] = employees[i].getName();
-        }
-        return employeeNames;
-    }
-
-
 
 }
